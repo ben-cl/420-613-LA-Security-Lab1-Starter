@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ServerError";
+
+    String path = "";
+    if(ViewBag.Error != null)
+    {
+        path = ViewBag.Error;
+    }
+}
+
+<h2>ServerError</h2>
+<p>
+    The error path is @path
+</p>

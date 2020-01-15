@@ -10,6 +10,8 @@ namespace SecurityLab1_Starter.Controllers
     {
         public ActionResult Index()
         {
+            //throw new System.ArgumentException("Parameter cannot be null", "original");
+
             return View();
         }
 
@@ -25,6 +27,13 @@ namespace SecurityLab1_Starter.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult GenError()
+        {
+            throw new System.ArgumentException("Parameter cannot be null", "original");
+
+
         }
     }
 }
