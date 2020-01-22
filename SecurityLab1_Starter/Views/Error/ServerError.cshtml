@@ -3,7 +3,7 @@
     ViewBag.Title = "ServerError";
 
     String path = "";
-    if(ViewBag.Error != null)
+    if (ViewBag.Error != null)
     {
         path = ViewBag.Error;
     }
@@ -13,3 +13,5 @@
 <p>
     The error path is @path
 </p>
+
+@Html.ActionLink("HomePage", "Index", "Home")

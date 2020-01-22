@@ -1,5 +1,4 @@
-﻿using SecurityLab1_Starter.Class;
-using SecurityLab1_Starter.Models;
+﻿using SecurityLab1_Starter.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
