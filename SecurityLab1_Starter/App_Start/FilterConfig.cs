@@ -9,6 +9,8 @@ namespace SecurityLab1_Starter
         {
             //removing filter
             //filters.Add(new HandleErrorAttribute());
+
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SecurityLab1_Starter.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,5 +18,21 @@ namespace SecurityLab1_Starter
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_Error()
+        {
+            var ex = Server.GetLastError();
+            //log the error!
+            //_Logger.Error(ex);
+
+            Logger log = new Logger();
+            log.LogToEventViewer(System.Diagnostics.EventLogEntryType.Error, ex.Message); 
+
+
+            // Redirect? 
+        }
+
+
+
     }
 }
