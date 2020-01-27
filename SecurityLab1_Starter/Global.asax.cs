@@ -14,9 +14,18 @@ namespace SecurityLab1_Starter
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            
+
+
+FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // not sure about this line if good and good place 
+            DependencyResolver.SetResolver(new Infrastructure.NinjectDependencyResolver());
         }
 
         protected void Application_Error()

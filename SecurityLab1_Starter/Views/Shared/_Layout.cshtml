@@ -7,7 +7,26 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+
+
 <body>
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            Page.Title = "Home page for " + User.Identity.Name;
+
+            <h4>Welcome @User.Identity.Name</h4>
+
+            <br />
+            @Html.ActionLink("Log out", "Logout", "Account");
+        }
+        else
+        {
+            @Html.ActionLink("Login", "Login", "Account");
+            Page.Title = "Welcome.";
+        }
+
+    }
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
         @Html.ActionLink("Lab {1,2,3,4}", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse1">

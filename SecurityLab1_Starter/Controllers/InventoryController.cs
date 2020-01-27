@@ -12,9 +12,10 @@ namespace SecurityLab1_Starter.Controllers
     public class InventoryController : Controller
     {
         // GET: Inventory
+        [Authorize(Users= "testuser2")]
         public ActionResult Index()
         {
-            throw new System.ArgumentException("Parameter cannot be null", "original");
+            //throw new System.ArgumentException("Parameter cannot be null", "original");
             return View();
         }
 
